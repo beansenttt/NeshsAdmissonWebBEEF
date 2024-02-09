@@ -1,51 +1,19 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDF Viewer</title>
-<!-- Include PDF.js library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  canvas {
-    display: block;
-    margin: 0 auto;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NESHS ADMISSION WEB</title>
+    <style>
+        #neshsbeef {
+            width: 85%;
+            height: 975px;
+        }
+    </style>
+
 </head>
 <body>
-
-<canvas id="pdfViewer"></canvas>
-
-<script>
-// PDF.js script to render PDF
-const pdfUrl = 'Enhanced-BEEF (1).pdf'; // Replace 'Enhanced-BEEF (1).pdf' with your PDF file path
-const pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
-
-pdfjsLib.getDocument(Enhanced-BEEF (1)).promise.then(pdf => {
-  pdf.getPage(1).then(page => {
-    const scale = 1.5;
-    const viewport = page.getViewport({ scale });
-
-    const canvas = document.getElementById('pdfViewer');
-    const context = canvas.getContext('2d');
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-
-    const renderContext = {
-      canvasContext: context,
-      viewport: viewport
-    };
-    page.render(renderContext);
-  });
-});
-</script>
-
+    <iframe id="neshsbeef" src="Enhanced-BEEF (1).pdf" frameborder="0"></iframe>
 </body>
 </html>
